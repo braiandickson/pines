@@ -17,8 +17,6 @@ gem 'devise', '~> 3.4.1'					# Administracion de registro de usuarios.
 gem 'paperclip', '~> 4.2.1'					# Gestion de subida de imagenes en formularios.
 gem 'masonry-rails', '~> 0.2.4'				# Animacion jquery para transicion de fotos.
 gem 'acts_as_votable', '~> 0.10.0'			# Sistema de votacion, like, me gusta, etc.
-gem 'cancan', '~> 1.6.10'					# Administracion de privilegios para usuarios.
-gem 'searchkick', '~> 0.8.7'				# Realizar busquedas.
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

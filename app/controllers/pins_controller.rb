@@ -1,13 +1,21 @@
 class PinsController < ApplicationController
 	before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
 	before_action :authenticate_user!, except: [:index, :show, :search]
-	#load_and_authorize_resource
+	before_action :find_pin, :only => [:show, :edit, :update, :destroy]
+	before_action :check_auth, :only => [:edit, :update, :destroy]
 
 	def search
 		if params[:search].present?
 			@pins = Pin.search(params[:search])
 		else
 			@pins = Pin.all.order("created_at DESC")
+		end
+	end
+
+	def check_auth
+		if session[:user_id] != @pin.user_id
+			flash[:notice] = "No tienes autorizacion para realizar esa accion"
+			redirect_to pins_path
 		end
 	end
 
