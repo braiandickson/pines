@@ -17,7 +17,6 @@ gem 'devise', '~> 3.4.1'					# Administracion de registro de usuarios.
 gem 'paperclip', '~> 4.2.1'					# Gestion de subida de imagenes en formularios.
 gem 'masonry-rails', '~> 0.2.4'				# Animacion jquery para transicion de fotos.
 gem 'acts_as_votable', '~> 0.10.0'			# Sistema de votacion, like, me gusta, etc.
-gem 'sqlite3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -32,5 +31,5 @@ group :development, :test do
 end
 
 group :production do
-	#gem 'pg', '~> 0.18.1'
+	gem 'pg'
 end
